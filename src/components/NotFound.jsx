@@ -9,15 +9,18 @@ const NotFound = ({ handleResearch, handleNation }) => {
     handleNation('');
   });
   return (
-    <Container>
+    <Container className='bg-dark'>
       <Row className='justify-content-center my-4'>
-        <Col xs={12} md={6} className='text-center'>
+        <Col xs={12} md={6} className='text-center text-white'>
           <h2 className='mb-4'>404 - Not Found</h2>
+          <hr className='text-dark'></hr>
           <h4 className='mb-3'>
-            Invalid city - Please return to the homepage and try again
+           This city doesn't exist! Try to search a different city!
           </h4>
+          <hr className='text-dark'></hr>
           <Button
-            variant='danger'
+          className='text-white'
+            variant='warning'
             onClick={() => {
               navigate('/');
             }}

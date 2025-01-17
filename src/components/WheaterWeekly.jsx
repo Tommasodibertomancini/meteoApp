@@ -60,7 +60,7 @@ function WeeklyMeteo({ handleResearch, handleNation }) {
             <Container fluid className='my-5'>
               <Row className=' justify-content-center'>
                 <Col xs={12} md={8} className='text-center my-5'>
-                <Spinner animation="border" variant="warning" />
+                  <Spinner animation='border' variant='warning' />
                 </Col>
               </Row>
             </Container>
@@ -77,7 +77,7 @@ function WeeklyMeteo({ handleResearch, handleNation }) {
                   return (
                     <Col key={weather.dt} className='mb-4'>
                       <Row>
-                        <Col xs={12}>
+                        <Col xs={12} className='text-center'>
                           <h5>{days[new Date(weather.dt_txt).getDay()]}</h5>
                         </Col>
                         <Col xs={12} className='mb-3'>
@@ -87,24 +87,24 @@ function WeeklyMeteo({ handleResearch, handleNation }) {
                           ></img>
                         </Col>
                         <Col xs={12}>
-                          <p className='fs-6 mb-0'>
+                          <p className='fs-6 mb-0 text-center'>
                             Temp {kToC(weather.main.temp)}
                             <sup>°C</sup>
                           </p>
                         </Col>
                         <Col xs={12}>
-                          <p className='fs-6 mb-0'>
+                          <p className='fs-6 mb-0 text-center'>
                             Humidity: {weather.main.humidity}%
                           </p>
                         </Col>
                         <Col xs={12}>
-                          <p className='fs-6 mb-0'>
+                          <p className='fs-6 mb-0 text-center'>
                             Feels like: {kToC(weather.main.feels_like)}
                             <sup>°C</sup>
                           </p>
                         </Col>
                         <Col xs={12}>
-                          <p className='fs-6 mb-0'>
+                          <p className='fs-6 mb-0 text-center'>
                             Wind speed {weather.wind.speed}
                             <sup>m/s</sup>
                           </p>
@@ -116,14 +116,17 @@ function WeeklyMeteo({ handleResearch, handleNation }) {
               </Row>
               <Row>
                 <Col>
-                  <Button
-                    variant='danger'
-                    onClick={() => {
-                      navigate('/');
-                    }}
-                  >
-                    Homepage
-                  </Button>
+                  <div className='d-flex justify-content-end'>
+                    <Button
+                      className='text-white'
+                      variant='warning'
+                      onClick={() => {
+                        navigate('/');
+                      }}
+                    >
+                      Homepage
+                    </Button>
+                  </div>
                 </Col>
               </Row>
             </Container>

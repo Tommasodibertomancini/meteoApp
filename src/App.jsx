@@ -25,7 +25,7 @@ function App() {
   console.log(nation);
   return (
     <BrowserRouter>
-      <Container fluid className='App p-0 vh-100'>
+      <Container fluid className='App p-0 vh-100 bg-dark'>
         <header>
           <WheaterNav
             handleResearch={handleResearch}

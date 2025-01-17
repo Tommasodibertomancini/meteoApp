@@ -104,7 +104,7 @@ function WheaterHome({ searched, nation, handleId }) {
       ) : (
         <Container className='shadow-custom mb-3 p-4'>
           <Row>
-            <Col xs={12} className='text-center text-lg-left mb-3'>
+            <Col xs={12} className='text-left ms-2 mb-3'>
               <h1 className='mb-0'>{meteo.name}</h1>
               <h5>
                 {`${days[date.getDay()]}  ${date.getDate()} ${
@@ -114,24 +114,33 @@ function WheaterHome({ searched, nation, handleId }) {
             </Col>
             <Col xs={12} md={6}>
               <Row className='mb-3'>
-                <Col xs={12} className='mb-3'>
-                  <img alt='' src={handleSvg(meteo.weather[0].icon)} />
+                <Col xs={12} className='mb-3 text-center'>
+                  <img
+                    alt=''
+                    src={handleSvg(meteo.weather[0].icon)}
+                    style={{ width: '350px', height: '350px' }}
+                  />
                 </Col>
                 <Col xs={12}>
-                  <p className='fs-1'>
+                  <p className='fs-1 text-center'>
                     {kToC(meteo.main.temp)}
                     <sup>°C</sup>
                   </p>
                 </Col>
                 <Col xs={12}>
-                  <h6 className='mb-0'>Humidity: {meteo.main.humidity}%</h6>
-                  <h6 className='mb-0'>
+                  <h6 className='mb-1 text-center'>
+                    Humidity: {meteo.main.humidity}%
+                  </h6>
+                  <h6 className='mb-1 text-center'>
                     Feels like: {kToC(meteo.main.feels_like)}
                     <sup>°C</sup>
                   </h6>
-                  <h6 className='mb-0'>
+                  <h6 className='mb-1 text-center'>
                     Wind speed {meteo.wind.speed}
                     <sup>m/s</sup>
+                  </h6>
+                  <h6 className='mb-1 text-center'>
+                    Sea level: {meteo.main.sea_level}m
                   </h6>
                 </Col>
               </Row>
@@ -175,20 +184,18 @@ function WheaterHome({ searched, nation, handleId }) {
               </Row>
             </Col>
           </Row>
-          <Row className='mb-5'>
-            <Col xs={12}>
-              <Button
-              className='text-white'
-                variant='warning'
-                onClick={() => {
-                  handleId(meteo.id);
-                  navigate(`/details/${meteo.id}`);
-                }}
-              >
-                Next 5 days weather
-              </Button>
-            </Col>
-          </Row>
+          <div className='d-flex justify-content-end'>
+            <Button
+              className='text-white justify-content-end mb-2 me-2'
+              variant='warning'
+              onClick={() => {
+                handleId(meteo.id);
+                navigate(`/details/${meteo.id}`);
+              }}
+            >
+              Next 5 days weather
+            </Button>
+          </div>
         </Container>
       )}
     </>

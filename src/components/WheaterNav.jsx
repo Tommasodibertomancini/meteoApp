@@ -40,8 +40,11 @@ function WheaterNav({ handleResearch, handleNation, id }) {
           >
             Home
           </Link>
-          <Link to='/details' className={isActive(`/details/&{id}`)}>
+          <Link href='javascript:void(0)' className={isActive(`/details/&{id}`)}>
             Details
+          </Link>
+          <Link href='javascript:void(0)' className={isActive(`/favourites/&{id}`)}>
+            Favourites
           </Link>
         </Nav>
         {location.pathname === '/' ? (
@@ -65,7 +68,7 @@ function WheaterNav({ handleResearch, handleNation, id }) {
               maxLength={2}
               onChange={(e) => setNation(e.target.value)}
             />
-            <Button type='submit' variant='outline-danger'>
+            <Button type='submit' variant='outline-warning text-white'>
               Search
             </Button>
           </Form>
