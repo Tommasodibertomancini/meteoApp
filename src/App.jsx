@@ -1,5 +1,6 @@
 import '../public/assets/css/style.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap-icons/font/bootstrap-icons.css';
 import { Container } from 'react-bootstrap';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Welcome from './components/Welcome';
@@ -8,6 +9,7 @@ import WheaterWeekly from './components/WheaterWeekly';
 import NotFound from './components/NotFound';
 import WheaterNav from './components/WheaterNav';
 import WheaterDefault from './components/WheaterDefault';
+import WheaterFooter from './components/WheaterFooter';
 
 function App() {
   const [searched, setSearched] = useState('');
@@ -68,6 +70,9 @@ function App() {
             ></Route>
           </Routes>
         </main>
+        <footer className='bg-dark'>
+          <WheaterFooter />
+        </footer>
       </Container>
     </BrowserRouter>
   );
