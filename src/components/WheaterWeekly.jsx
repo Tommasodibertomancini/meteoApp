@@ -3,7 +3,7 @@ import { Container, Row, Col, Spinner, Button } from 'react-bootstrap';
 import { useNavigate, useParams } from 'react-router-dom';
 import { handleSvg } from './WheaterHome';
 
-function WeeklyMeteo({ handleResearch, handleNation }) {
+function WheaterWeekly({ handleResearch, handleNation }) {
   const [meteo, setMeteo] = useState({});
   const [list, setList] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -137,4 +137,4 @@ function WeeklyMeteo({ handleResearch, handleNation }) {
   );
 }
 
-export default WeeklyMeteo;
+export default WheaterWeekly;
